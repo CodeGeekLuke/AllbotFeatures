@@ -142,6 +142,8 @@ function decideMessage(sender, text1) {
 		sendButtonMessage(sender, "Here are some customer favorites!", "Clothes", "Stroller", "Toys")
 	} else if (text.includes("clothes")) {
 		sendTextMessage(sender, "Boy or girl?")
+	} else if (text.includes("Bedrooms")) {
+		sendbedrooms(sender"Here are the bedrooms we offer")
 	} else if (text.includes("boy")) {
 		send3SpecificItems(sender, specificItems.infant_boy_clothing.clothing1, specificItems.infant_boy_clothing.clothing2, specificItems.infant_boy_clothing.clothing3)
 	} else {
@@ -377,6 +379,60 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
     })
 }
 
+function sendbedrooms(sender, obj1, obj2) {
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Classic",
+                    "subtitle": "Our most basic Room",
+                    "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/classic/img6153.jpg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.theconistonhotel.com/rooms.html",
+                        "title": "View"
+                    }],
+                }, {
+                    "title": "Superior",
+                    "subtitle": "Our middle room",
+                    "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/superior/standardroomevening.jpg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.theconistonhotel.com/rooms.html",
+                        "title": "Veiw"
+                    }],
+
+                }, {
+                    "title": "Luxury",
+                    "subtitle": "Our best room",
+                    "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/luxury/premiumevening.jpg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.theconistonhotel.com/rooms.html",
+                        "title": "View"
+                    }],
+                }]
+            }
+        }
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
 
 // Spin up the server
 app.listen(app.get('port'), function() {
