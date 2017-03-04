@@ -275,7 +275,7 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                     }, {
                         "type": "postback",
                         "title": "Book a room",
-                        "payload": obj1.button_title_2.toLowerCase(),
+                        "payload": "Book a room",
                     }],
                 }, {
                     "title": "Menus",
@@ -295,17 +295,31 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                         "payload": "Pub Menu",
                     }],
                 }, {
-                    "title": obj3.header,
-                    "subtitle": obj3.subtitle,
-                    "image_url": obj3.image_url,
+                    "title": "Spa",
+                    "subtitle": "Relax",
+                    "image_url": "http://www.theconistonhotel.com/userfile/spa/outside-views/spa-entrance-and-logo.jpg",
                     "buttons": [{
-                        "type": "web_url",
-                        "url": obj3.url,
-                        "title": obj3.button_title_1,
+                        "type": "postback",
+                        "title": "Spa Days",
+                        "payload": "Spa Days",
                     }, {
                     	"type": "postback",
-                        "title": obj3.button_title_2,
-                        "payload": obj3.button_title_2.toLowerCase(),
+                        "title": "Facilities",
+                        "payload": "Facilities",
+                    }, {
+                    	"type": "postback",
+                        "title": "Gym",
+                        "payload": "Gym",
+                    }],
+                }, {
+                    "title": "Activities",
+                    "subtitle": "Relax",
+                    "image_url": "http://www.theconistonhotel.com/userfile/activities/4x4/defender/img7770-resize.jpg",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "View Activities",
+                        "payload": "View Activities",
+                    
                     }],
                 }]
             }
