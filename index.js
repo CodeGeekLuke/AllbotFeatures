@@ -133,7 +133,7 @@ function decideMessage(sender, text1) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.", "Sunscreen", "Flip Flops", "Sunglasses")
 	} else if (text.includes("Main Menu")) {
 		sendTextMessage(sender, "Here is the main menu:");
-	    send3SpecificItems(sender, messageData)
+	    send3SpecificItems(sender, specificItems.sunscreens.sunscreen1, specificItems.sunscreens.sunscreen2, specificItems.sunscreens.sunscreen3)
 	} else if (text.includes("gift")) {
 		sendButtonMessage(sender, "What is the occasion?", "Baby Shower", "Birthday", "Graduation");
 	} else if (text.includes("baby shower")) {
@@ -258,7 +258,7 @@ function send2TypesOfItems(sender, obj1, obj2) {
     })
 }
 
-function send3SpecificItems(sender, messageData) {
+function send3SpecificItems(sender, obj1, obj2, obj3) {
     let messageData = {
         "attachment": {
             "type": "template",
