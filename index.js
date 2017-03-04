@@ -258,7 +258,7 @@ function send2TypesOfItems(sender, obj1, obj2) {
     })
 }
 
-function send3SpecificItems(sender, obj1, obj2, obj3) {
+function send3SpecificItems(sender, messageData) {
     let messageData = {
         "attachment": {
             "type": "template",
