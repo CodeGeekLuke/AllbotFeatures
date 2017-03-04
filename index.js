@@ -265,13 +265,13 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": Bedrooms,
-                    "subtitle": Bedrooms,
+                    "title": "Bedrooms",
+                    "subtitle": "Bedrooms",
                     "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/superior/standardroomevening.jpg",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": View Bedrooms
+                        "title": "View Bedrooms"
                     }, {
                         "type": "postback",
                         "title": obj1.button_title_2,
