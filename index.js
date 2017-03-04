@@ -144,7 +144,7 @@ function decideMessage(sender, text1) {
 		sendTextMessage(sender, "Boy or girl?")
 	} else if (text.includes("Bedrooms")) {
 		sendTextMessage(sender, "Please see below the bedrooms we offer!");
-		sendBedrooms(sender, specificItems.sunscreens.sunscreen1, specificItems.sunscreens.sunscreen2, specificItems.sunscreens.sunscreen3)
+	   sendBedrooms(sender, specificItems.sunscreens.sunscreen1, specificItems.sunscreens.sunscreen2, specificItems.sunscreens.sunscreen3)
 	} else if (text.includes("boy")) {
 		send3SpecificItems(sender, specificItems.infant_boy_clothing.clothing1, specificItems.infant_boy_clothing.clothing2, specificItems.infant_boy_clothing.clothing3)
 	} else {
