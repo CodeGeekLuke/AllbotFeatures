@@ -131,9 +131,9 @@ function decideMessage(sender, text1) {
 		sendTextMessage(sender, "Added to shopping cart!")
 	} else if (text.includes("no")) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.", "Sunscreen", "Flip Flops", "Sunglasses")
-	} else if (text.includes("sunscreen")) {
-		sendTextMessage(sender, "Here are some great deals on sunscreen!");
-	    send3SpecificItems(sender, specificItems.sunscreens.sunscreen1, specificItems.sunscreens.sunscreen2, specificItems.sunscreens.sunscreen3)
+	} else if (text.includes("Main Menu")) {
+		sendTextMessage(sender, "Here is the main menu:");
+	    send3SpecificItems(sender)
 	} else if (text.includes("gift")) {
 		sendButtonMessage(sender, "What is the occasion?", "Baby Shower", "Birthday", "Graduation");
 	} else if (text.includes("baby shower")) {
