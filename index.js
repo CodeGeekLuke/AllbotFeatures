@@ -376,7 +376,7 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": "View Bedrooms"
+                        "title": "View Bedrooms",
                     }],
                 }, {
                     "title": "Superior Bedroom",
@@ -385,7 +385,7 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": "View Bedrooms"
+                        "title": "View Bedrooms",
                     }],
                 }, {
                     "title": "Luxury Bedroom",
@@ -394,7 +394,7 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": "View Bedrooms"
+                        "title": "View Bedrooms",
                     
                     }],
                 }]
