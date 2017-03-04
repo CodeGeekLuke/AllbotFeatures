@@ -321,6 +321,40 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                         "payload": "View Activities",
                     
                     }],
+                }, {
+                    "title": "Corporate",
+                    "subtitle": "Team Building",
+                    "image_url": "http://www.theconistonhotel.com/userfile/activities/dragon-boating/boating/200906112009egypt0054.jpg",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "View Corporate",
+                        "payload": "View Corporate",
+                    
+                    }],
+                }, {
+                    "title": "Weddings",
+                    "subtitle": "Magical Days",
+                    "image_url": "http://www.theconistonhotel.com/userfile/wedding/couples/image1-2.jpg",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Weddings",
+                        "payload": "Weddings",
+                    
+                    }],
+                }, {
+                    "title": "Book a table and directions",
+                    "subtitle": "",
+                    "image_url": "http://www.theconistonhotel.com/userfile/external-shots/hotel/front-of-hotel.jpg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "URL": "https://goo.gl/maps/trLjKY91qUD2",
+                        "title": "Show Directions",
+                    }, {
+                    	"type": "postback",
+                        "title": "Book a table",
+                        "payload": "Book a table",
+                    
+                    }],
                 }]
             }
         }
