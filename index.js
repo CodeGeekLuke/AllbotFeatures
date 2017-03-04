@@ -278,17 +278,21 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                         "payload": obj1.button_title_2.toLowerCase(),
                     }],
                 }, {
-                    "title": obj2.header,
-                    "subtitle": obj2.subtitle,
-                    "image_url": obj2.image_url,
+                    "title": "Menus",
+                    "subtitle": "We are pleased to offer you a wide-range of menu for lunch or dinner",
+                    "image_url": "http://www.theconistonhotel.com/userfile/food/mains/charlotte-gale-coniston-hotel-fullsize-8651.jpg",
                     "buttons": [{
-                        "type": "web_url",
-                        "url": obj2.url,
-                        "title": obj2.button_title_1,
+                        "type": "postback",
+                        "title": "Lunch Menu",
+                        "payload": "Lunch Menu",
                     }, {
                     	"type": "postback",
-                        "title": obj2.button_title_2,
-                        "payload": obj2.button_title_2.toLowerCase(),
+                        "title": "Dinner Menu",
+                        "payload": "Dinner Menu",
+                    }, {
+                    	"type": "postback",
+                        "title": "Pub Menu",
+                        "payload": "Pub Menu",
                     }],
                 }, {
                     "title": obj3.header,
