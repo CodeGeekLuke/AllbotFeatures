@@ -347,7 +347,7 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                     "image_url": "http://www.theconistonhotel.com/userfile/external-shots/hotel/front-of-hotel.jpg",
                     "buttons": [{
                         "type": "web_url",
-                        "URL": "https://goo.gl/maps/trLjKY91qUD2",
+                        "URL": "https://www.google.co.uk/maps/place/The+Coniston+Hotel/@53.9937952,-2.1657604,17z/data=!3m1!4b1!4m5!3m4!1s0x487b8bbfd608f675:0x6d0c6140ff345f29!8m2!3d53.9937952!4d-2.1635717",
                         "title": "Show Directions",
                     }, {
                     	"type": "postback",
