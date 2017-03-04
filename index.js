@@ -143,7 +143,7 @@ function decideMessage(sender, text1) {
 	} else if (text.includes("clothes")) {
 		sendTextMessage(sender, "Boy or girl?")
 	} else if (text.includes("Bedrooms")) {
-		sendbedrooms(sender"Here are the bedrooms we offer")
+		sendbedrooms(sender, "Here are the bedrooms we offer")
 	} else if (text.includes("boy")) {
 		send3SpecificItems(sender, specificItems.infant_boy_clothing.clothing1, specificItems.infant_boy_clothing.clothing2, specificItems.infant_boy_clothing.clothing3)
 	} else {
