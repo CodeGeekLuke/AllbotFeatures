@@ -133,7 +133,7 @@ function decideMessage(sender, text1) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.", "Sunscreen", "Flip Flops", "Sunglasses")
 	} else if (text.includes("Main Menu")) {
 		sendTextMessage(sender, "Here is the main menu:");
-	    send3SpecificItems(sender)
+	    send3SpecificItems(sender, messageData)
 	} else if (text.includes("gift")) {
 		sendButtonMessage(sender, "What is the occasion?", "Baby Shower", "Birthday", "Graduation");
 	} else if (text.includes("baby shower")) {
