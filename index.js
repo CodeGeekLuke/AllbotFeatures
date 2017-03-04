@@ -395,9 +395,6 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                         "type": "web_url",
                         "url": "http://www.theconistonhotel.com/rooms.html",
                         "title": "View Bedrooms"
-                    "type": "web_url",
-                        "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": "View Bedrooms"
                     
                     }],
                 }]
