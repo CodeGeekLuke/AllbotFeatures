@@ -140,6 +140,8 @@ function decideMessage(sender, text1) {
 		sendButtonMessage(sender, "What's your price range?", "$0 - $15", "$15 - $50", "$50 - $100")
 	} else if (text.includes("$")) {
 		sendButtonMessage(sender, "Here are some customer favorites!", "Clothes", "Stroller", "Toys")
+	} else if (text.includes("Bedrooms")){
+		sendRooms(sender)
 	} else if (text.includes("clothes")) {
 		sendTextMessage(sender, "Boy or girl?")
 	} else if (text.includes("boy")) {
@@ -353,6 +355,49 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                     	"type": "postback",
                         "title": "Book a table",
                         "payload": "Book a table",
+                    
+                    }],
+                }]
+            }
+        }
+    }
+
+
+    function sendRooms(sender) {
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Classic Room",
+                    "subtitle": "Our most basic Room",
+                    "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/superior/standardroomevening.jpg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.theconistonhotel.com/rooms.html",
+                        "title": "View Bedrooms"
+                    }],
+                }, {
+                    "title": "Superior Bedroom",
+                    "subtitle": "We are pleased to offer you a wide-range of menu for lunch or dinner",
+                    "image_url": "http://www.theconistonhotel.com/userfile/food/mains/charlotte-gale-coniston-hotel-fullsize-8651.jpg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.theconistonhotel.com/rooms.html",
+                        "title": "View Bedrooms"
+                    }],
+                }, {
+                    "title": "Luxury Bedroom",
+                    "subtitle": "Paradise",
+                    "image_url": "http://www.theconistonhotel.com/userfile/spa/outside-views/spa-entrance-and-logo.jpg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.theconistonhotel.com/rooms.html",
+                        "title": "View Bedrooms"
+                    "type": "web_url",
+                        "url": "http://www.theconistonhotel.com/rooms.html",
+                        "title": "View Bedrooms"
                     
                     }],
                 }]
