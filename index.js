@@ -274,7 +274,7 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
                         "title": "View Bedrooms"
                     }, {
                         "type": "postback",
-                        "title": obj1.button_title_2,
+                        "title": "Book a room",
                         "payload": obj1.button_title_2.toLowerCase(),
                     }],
                 }, {
