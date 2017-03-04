@@ -363,7 +363,7 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
     }
 
 
-    function sendRooms(sender,text) {
+    function sendRooms(sender,messageData) {
     let messageData = {
         "attachment": {
             "type": "template",
