@@ -67,7 +67,7 @@ var popularTypesOfItems = {
 var specificItems = {
     sunscreens: {
         sunscreen1: {
-            header: "Alba Botanica",
+            header: "Classic",
             subtitle: "Keeping your skin youthful",
             image_url: "http://scene7.targetimg1.com/is/image/Target/16872833?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
             url: "http://www.target.com/p/alba-botanica-emollient-sunscreen-active-kids-clear-spray-spf-50-6-oz/-/A-16872833",
@@ -75,7 +75,7 @@ var specificItems = {
             button_title_2: "Add to Cart"
         },
          sunscreen2: {
-            header: "Neutrogena Beach Defense",
+            header: "Superior",
             subtitle: "Protecting your skin on the go!",
             image_url: "http://scene7.targetimg1.com/is/image/Target/50787513?wid=450&hei=450&fmt=pjpeg",
             url: "http://www.target.com/p/neutrogena-oh-joy-beach-defense-spray-sunscreen-broad-spectrum-spf-70-6-5-oz/-/A-50787513",
@@ -83,7 +83,7 @@ var specificItems = {
             button_title_2: "Add to Cart"
         },
         sunscreen3: {
-            header: "Coppertone Kids",
+            header: "Luxury",
             subtitle: "Sun protection made easy!",
             image_url: "http://scene7.targetimg1.com/is/image/Target/50584700?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
             url: "http://www.target.com/p/coppertone-kids-sunscreen-continuous-spray-spf-50/-/A-50584700",
@@ -144,7 +144,7 @@ function decideMessage(sender, text1) {
 		sendTextMessage(sender, "Boy or girl?")
 	} else if (text.includes("Bedrooms")) {
 		sendTextMessage(sender, "Please see below the bedrooms we offer!");
-		sendbedrooms(sender, popularTypesOfItems.invitations, popularTypesOfItems.favorBags)
+		sendBedrooms(sender, specificItems.sunscreens.sunscreen1, specificItems.sunscreens.sunscreen2, specificItems.sunscreens.sunscreen3)
 	} else if (text.includes("boy")) {
 		send3SpecificItems(sender, specificItems.infant_boy_clothing.clothing1, specificItems.infant_boy_clothing.clothing2, specificItems.infant_boy_clothing.clothing3)
 	} else {
@@ -380,39 +380,50 @@ function send3SpecificItems(sender, obj1, obj2, obj3) {
     })
 }
 
-function sendbedrooms(sender, obj1, obj2) {
+function sendBedrooms(sender, obj1, obj2, obj3) {
     let messageData = {
         "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "Classic",
-                    "subtitle": "Our most basic Room",
-                    "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/classic/img6153.jpg",
+                    "title": obj1.header,
+                    "subtitle": obj1.subtitle,
+                    "image_url": obj1.image_url,
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": "View"
+                        "url": obj1.url,
+                        "title": obj1.button_title_1
+                    }, {
+                        "type": "postback",
+                        "title": obj1.button_title_2,
+                        "payload": obj1.button_title_2.toLowerCase(),
                     }],
                 }, {
-                    "title": "Superior",
-                    "subtitle": "Our middle room",
-                    "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/superior/standardroomevening.jpg",
+                    "title": obj2.header,
+                    "subtitle": obj2.subtitle,
+                    "image_url": obj2.image_url,
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": "Veiw"
+                        "url": obj2.url,
+                        "title": obj2.button_title_1,
+                    }, {
+                    	"type": "postback",
+                        "title": obj2.button_title_2,
+                        "payload": obj2.button_title_2.toLowerCase(),
                     }],
-
                 }, {
-                    "title": "Luxury",
-                    "subtitle": "Our best room",
-                    "image_url": "http://www.theconistonhotel.com/userfile/bedrooms/luxury/premiumevening.jpg",
+                    "title": obj3.header,
+                    "subtitle": obj3.subtitle,
+                    "image_url": obj3.image_url,
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.theconistonhotel.com/rooms.html",
-                        "title": "View"
+                        "url": obj3.url,
+                        "title": obj3.button_title_1,
+                    }, {
+                    	"type": "postback",
+                        "title": obj3.button_title_2,
+                        "payload": obj3.button_title_2.toLowerCase(),
                     }],
                 }]
             }
