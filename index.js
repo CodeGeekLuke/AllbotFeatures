@@ -141,7 +141,7 @@ function decideMessage(sender, text1) {
 	} else if (text.includes("$")) {
 		sendButtonMessage(sender, "Here are some customer favorites!", "Clothes", "Stroller", "Toys")
 	} else if (text.includes("Bedrooms")){
-		sendRooms(sender)
+		sendRooms(sender, "We have some nice rooms to see!")
 	} else if (text.includes("clothes")) {
 		sendTextMessage(sender, "Boy or girl?")
 	} else if (text.includes("boy")) {
