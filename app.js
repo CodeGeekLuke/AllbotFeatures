@@ -248,59 +248,59 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
-      case 'Image':
+      case 'image':
         sendImageMessage(senderID);
         break;
 
-      case 'Gif':
+      case 'gif':
         sendGifMessage(senderID);
         break;
 
-      case 'Audio':
+      case 'audio':
         sendAudioMessage(senderID);
         break;
 
-      case 'Video':
+      case 'video':
         sendVideoMessage(senderID);
         break;
 
-      case 'File':
+      case 'file':
         sendFileMessage(senderID);
         break;
 
-      case 'Button':
+      case 'button':
         sendButtonMessage(senderID);
         break;
 
-      case 'Generic':
+      case 'generic':
         sendGenericMessage(senderID);
         break;
 
-      case 'Receipt':
+      case 'receipt':
         sendReceiptMessage(senderID);
         break;
 
-      case 'Quick reply':
+      case 'quick reply':
         sendQuickReply(senderID);
         break;        
 
-      case 'Read receipt':
+      case 'read receipt':
         sendReadReceipt(senderID);
         break;        
 
-      case 'Typing on':
+      case 'typing on':
         sendTypingOn(senderID);
         break;        
 
-      case 'Typing off':
+      case 'typing off':
         sendTypingOff(senderID);
         break;        
 
-      case 'Account linking':
+      case 'account linking':
         sendAccountLinking(senderID);
         break;
 
-      case 'All':
+      case 'all':
         sendImageMessage(senderID);
         sendGifMessage(senderID);
         sendAudioMessage(senderID);
@@ -704,42 +704,42 @@ function sendQuickReply(recipientId) {
       quick_replies: [
         {
           "content_type":"text",
-          "title":"Image",
+          "title":"image",
           "payload":"image"
         },
         {
           "content_type":"text",
-          "title":"GIF",
+          "title":"gif",
           "payload":"gif"
         },
         {
           "content_type":"text",
-          "title":"Audio",
+          "title":"audio",
           "payload":"audio"
         },
         {
           "content_type":"text",
-          "title":"Video",
+          "title":"video",
           "payload":"video"
         },
         {
           "content_type":"text",
-          "title":"Button",
+          "title":"button",
           "payload":"button"
         },
         {
           "content_type":"text",
-          "title":"Generic",
+          "title":"generic",
           "payload":"generic"
         },
         {
           "content_type":"text",
-          "title":"Receipt",
+          "title":"receipt",
           "payload":"receipt"
         },
         {
           "content_type":"text",
-          "title":"All of the above",
+          "title":"all",
           "payload":"all"
         },
       ]
