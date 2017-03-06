@@ -51,10 +51,6 @@ const SERVER_URL = (process.env.SERVER_URL) ?
   (process.env.SERVER_URL) :
   "https://ancient-thicket-75253.herokuapp.com/";
 
-if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
-  console.error("Missing config values");
-  process.exit(1);
-}
 
 /*
  * Use your own validation token. Check that the token used in the Webhook 
