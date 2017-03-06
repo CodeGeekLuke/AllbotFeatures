@@ -14,19 +14,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
-/*
- * Be sure to setup your config values before running this code. You can 
- * set them using environment variables or modifying the config file in /config.
- *
- */
-
-// App Secret can be retrieved from the App Dashboard
-const APP_SECRET = "7178b6e1de29408b1aaf2a1e08563c63"
-
-
-// Arbitrary value used to validate a webhook
-const VALIDATION_TOKEN = "ThomTex"
-
 
 // Generate a page access token for your page from the App Dashboard
 const PAGE_ACCESS_TOKEN = "EAAGCflihnZC0BAGewertoCNs8vZCO3uPxUWkqNngyjZAPJnzixlb7fKAixWXBndaG0PiTcIA4FaYHumBOKSxDrjjXW49ZARNucBtNWZB2GxvaCWeqpQM4VcPDMtwzbbM98M4uKumKxvgaupYsNW9qFstt3I96T0cGqZCarsno9NwZDZD"
@@ -39,7 +26,7 @@ const PAGE_ACCESS_TOKEN = "EAAGCflihnZC0BAGewertoCNs8vZCO3uPxUWkqNngyjZAPJnzixlb
  */
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+      req.query['hub.verify_token'] === "ThomTex") {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
