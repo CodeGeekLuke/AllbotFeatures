@@ -705,42 +705,42 @@ function sendQuickReply(recipientId) {
         {
           "content_type":"text",
           "title":"image",
-          "payload":"image"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_IMAGE"
         },
         {
           "content_type":"text",
           "title":"gif",
-          "payload":"gif"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GIF"
         },
         {
           "content_type":"text",
           "title":"audio",
-          "payload":"audio"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_AUDIO"
         },
         {
           "content_type":"text",
           "title":"video",
-          "payload":"video"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_VIDEO"
         },
         {
           "content_type":"text",
           "title":"button",
-          "payload":"button"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_BUTTON"
         },
         {
           "content_type":"text",
           "title":"generic",
-          "payload":"generic"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GENERIC"
         },
         {
           "content_type":"text",
           "title":"receipt",
-          "payload":"receipt"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RECEIPT"
         },
         {
           "content_type":"text",
           "title":"all",
-          "payload":"all"
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ALL"
         },
       ]
     }
