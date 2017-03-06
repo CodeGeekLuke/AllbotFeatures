@@ -33,23 +33,23 @@ app.use(express.static('public'));
 // App Secret can be retrieved from the App Dashboard
 const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? 
   process.env.MESSENGER_APP_SECRET :
-  config.get('appSecret');
+  "7178b6e1de29408b1aaf2a1e08563c63";
 
 // Arbitrary value used to validate a webhook
 const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
   (process.env.MESSENGER_VALIDATION_TOKEN) :
-  config.get('validationToken');
+  "ThomTex";
 
 // Generate a page access token for your page from the App Dashboard
 const PAGE_ACCESS_TOKEN = (process.env.MESSENGER_PAGE_ACCESS_TOKEN) ?
   (process.env.MESSENGER_PAGE_ACCESS_TOKEN) :
-  config.get('pageAccessToken');
+  "EAAGCflihnZC0BAODDrgLZClR5eHBordizVo8dhUlWK0XkiEM4FZBZCwZBULBberc2y9ZBdZAWG8zF5N02z9L7lRcjIJcQIZB5uvF1eXVsCQDTZBI643lrOhWater7qhZAskZB3W0bTQuVtQsr72AtqOtz4qMF1nqvEEPbZBGYGaNOZBZBN5gZDZD";
 
 // URL where the app is running (include protocol). Used to point to scripts and 
 // assets located at this address. 
 const SERVER_URL = (process.env.SERVER_URL) ?
   (process.env.SERVER_URL) :
-  config.get('serverURL');
+  "https://ancient-thicket-75253.herokuapp.com/";
 
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   console.error("Missing config values");
