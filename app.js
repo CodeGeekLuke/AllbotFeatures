@@ -300,7 +300,7 @@ function receivedMessage(event) {
         sendAccountLinking(senderID);
         break;
 
-      case 'all'
+      case 'all':
         sendImageMessage(senderID);
         sendGifMessage(senderID);
         sendAudioMessage(senderID);
