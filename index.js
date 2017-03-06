@@ -1,3 +1,13 @@
+/*
+ * Copyright 2016-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+/* jshint node: true, devel: true */
 'use strict';
 
 const 
@@ -14,10 +24,37 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
+/*
+ * Be sure to setup your config values before running this code. You can 
+ * set them using environment variables or modifying the config file in /config.
+ *
+ */
+
+// App Secret can be retrieved from the App Dashboard
+const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? 
+  process.env.MESSENGER_APP_SECRET :
+  config.get('appSecret');
+
+// Arbitrary value used to validate a webhook
+const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
+  (process.env.MESSENGER_VALIDATION_TOKEN) :
+  config.get('validationToken');
 
 // Generate a page access token for your page from the App Dashboard
-const PAGE_ACCESS_TOKEN = "EAAGCflihnZC0BAGewertoCNs8vZCO3uPxUWkqNngyjZAPJnzixlb7fKAixWXBndaG0PiTcIA4FaYHumBOKSxDrjjXW49ZARNucBtNWZB2GxvaCWeqpQM4VcPDMtwzbbM98M4uKumKxvgaupYsNW9qFstt3I96T0cGqZCarsno9NwZDZD"
+const PAGE_ACCESS_TOKEN = (process.env.MESSENGER_PAGE_ACCESS_TOKEN) ?
+  (process.env.MESSENGER_PAGE_ACCESS_TOKEN) :
+  config.get('pageAccessToken');
 
+// URL where the app is running (include protocol). Used to point to scripts and 
+// assets located at this address. 
+const SERVER_URL = (process.env.SERVER_URL) ?
+  (process.env.SERVER_URL) :
+  config.get('serverURL');
+
+if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
+  console.error("Missing config values");
+  process.exit(1);
+}
 
 /*
  * Use your own validation token. Check that the token used in the Webhook 
@@ -26,7 +63,7 @@ const PAGE_ACCESS_TOKEN = "EAAGCflihnZC0BAGewertoCNs8vZCO3uPxUWkqNngyjZAPJnzixlb
  */
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === "ThomTex") {
+      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
@@ -402,7 +439,7 @@ function sendGifMessage(recipientId) {
       attachment: {
         type: "image",
         payload: {
-          url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/instagram_logo.gif"
+          url: SERVER_URL + "/assets/instagram_logo.gif"
         }
       }
     }
@@ -424,7 +461,7 @@ function sendAudioMessage(recipientId) {
       attachment: {
         type: "audio",
         payload: {
-          url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/sample.mp3"
+          url: SERVER_URL + "/assets/sample.mp3"
         }
       }
     }
@@ -446,7 +483,7 @@ function sendVideoMessage(recipientId) {
       attachment: {
         type: "video",
         payload: {
-          url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/allofus480.mov"
+          url: SERVER_URL + "/assets/allofus480.mov"
         }
       }
     }
@@ -468,7 +505,7 @@ function sendFileMessage(recipientId) {
       attachment: {
         type: "file",
         payload: {
-          url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/test.txt"
+          url: SERVER_URL + "/assets/test.txt"
         }
       }
     }
@@ -549,7 +586,7 @@ function sendGenericMessage(recipientId) {
             title: "rift",
             subtitle: "Next-generation virtual reality",
             item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/rift.png",
+            image_url: SERVER_URL + "/assets/rift.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/rift/",
@@ -563,7 +600,7 @@ function sendGenericMessage(recipientId) {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
             item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/touch.png",
+            image_url: SERVER_URL + "/assets/touch.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/touch/",
@@ -610,14 +647,14 @@ function sendReceiptMessage(recipientId) {
             quantity: 1,
             price: 599.00,
             currency: "USD",
-            image_url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/riftsq.png"
+            image_url: SERVER_URL + "/assets/riftsq.png"
           }, {
             title: "Samsung Gear VR",
             subtitle: "Frost White",
             quantity: 1,
             price: 99.99,
             currency: "USD",
-            image_url: "https://github.com/fbsamples/messenger-platform-samples/blob/master/node/public/assets/gearvrsq.png"
+            image_url: SERVER_URL + "/assets/gearvrsq.png"
           }],
           address: {
             street_1: "1 Hacker Way",
