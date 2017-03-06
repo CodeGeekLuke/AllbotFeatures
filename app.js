@@ -313,7 +313,7 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendGenericMessage(senderID);
+        sendQuickReply(senderID);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -700,23 +700,48 @@ function sendQuickReply(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What's your favorite movie genre?",
+      text: "What would you like to see a demo of?",
       quick_replies: [
         {
           "content_type":"text",
-          "title":"Action",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+          "title":"Image",
+          "payload":"image"
         },
         {
           "content_type":"text",
-          "title":"Comedy",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+          "title":"GIF",
+          "payload":"gif"
         },
         {
           "content_type":"text",
-          "title":"Drama",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
-        }
+          "title":"Audio",
+          "payload":"audio"
+        },
+        {
+          "content_type":"text",
+          "title":"Video",
+          "payload":"video"
+        },
+        {
+          "content_type":"text",
+          "title":"Button",
+          "payload":"button"
+        },
+        {
+          "content_type":"text",
+          "title":"Generic",
+          "payload":"generic"
+        },
+        {
+          "content_type":"text",
+          "title":"Receipt",
+          "payload":"receipt"
+        },
+        {
+          "content_type":"text",
+          "title":"All of the above",
+          "payload":"all"
+        },
       ]
     }
   };
